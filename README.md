@@ -70,7 +70,7 @@ ansible-playbook playbooks/site.yml
 
 ## Tested on
 
-- Ubuntu 24.04 LTS
+- Ubuntu 26.04 LTS
 
 ## License
 
