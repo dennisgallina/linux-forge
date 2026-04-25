@@ -1,0 +1,41 @@
+---
+- name: Update apt cache
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Upgrade all packages
+  apt:
+    upgrade: dist
+
+- name: Install base packages
+  apt:
+    name:
+      - curl
+      - wget
+      - vim
+      - git
+      - htop
+      - unzip
+      - net-tools
+    state: latest
+
+- name: Set timezone
+  timezone:
+    name: "{{ system_timezone }}"
+
+- name: Create admin user
+  user:
+    name: "{{ admin_user }}"
+    password: "{{ admin_password }}"
+    groups: "{{ admin_groups }}"
+    shell: /bin/bash
+    create_home: yes
+    state: present
+
+- name: Add admin user to sudoers
+  lineinfile:
+    path: /etc/sudoers.d/{{ admin_user }}
+    line: "{{ admin_user }} ALL=(ALL) NOPASSWD:ALL"
+    create: yes
+    validate: "visudo -cf %s"

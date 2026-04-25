@@ -1,0 +1,26 @@
+---
+- name: Ensure SSH is installed
+  apt:
+    name: openssh-server
+    state: latest
+
+- name: Configure SSH
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+    state: present
+  loop:
+    - { regexp: '^#?PermitRootLogin', line: 'PermitRootLogin no' }
+    - { regexp: '^#?PasswordAuthentication', line: 'PasswordAuthentication no' }
+    - { regexp: '^#?X11Forwarding', line: 'X11Forwarding no' }
+    - { regexp: '^#?MaxAuthTries', line: 'MaxAuthTries 3' }
+    - { regexp: '^#?LoginGraceTime', line: 'LoginGraceTime 30' }
+    - { regexp: '^#?AllowAgentForwarding', line: 'AllowAgentForwarding no' }
+  notify: Restart SSH
+
+- name: Ensure SSH is enabled and running
+  service:
+    name: ssh
+    state: started
+    enabled: yes

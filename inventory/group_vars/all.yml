@@ -1,0 +1,22 @@
+---
+# Timezone
+system_timezone: "Europe/Rome"
+
+# Administrator User
+admin_user: "dgallina"
+admin_password: "{{ vault_admin_password }}"  # From Ansible Vault
+admin_groups: "sudo"
+
+# SSH
+ssh_port: 22
+ssh_permit_root_login: "no"
+ssh_password_authentication: "no"
+
+# Firewall
+allowed_ports:
+  - "{{ ssh_port }}/tcp"
+
+# Fail2ban
+fail2ban_maxretry: 5
+fail2ban_bantime: 3600
+fail2ban_findtime: 600
