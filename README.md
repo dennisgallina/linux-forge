@@ -1,6 +1,6 @@
 # linux-forge 🔧
 
-An Ansible project to automate the base configuration and hardening of Linux servers (Ubuntu 24.04).
+An Ansible project to automate the base configuration and hardening of Linux servers (Ubuntu 26.04).
 
 ## What it does
 
@@ -12,7 +12,7 @@ An Ansible project to automate the base configuration and hardening of Linux ser
 ## Requirements
 
 - Ansible 2.14+
-- Target hosts: Ubuntu 24.04 LTS
+- Target hosts: Ubuntu 26.04 LTS
 - SSH access to target hosts
 
 ## Project structure
