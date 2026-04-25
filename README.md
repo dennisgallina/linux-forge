@@ -62,7 +62,7 @@ ansible-playbook playbooks/site.yml
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `system_timezone` | `Europe/Rome` | System timezone |
-| `admin_user` | `dennis` | Admin username to create |
+| `admin_user` | `dgallina` | Admin username to create |
 | `ssh_port` | `22` | SSH port |
 | `fail2ban_maxretry` | `5` | Max failed attempts before ban |
 | `fail2ban_bantime` | `3600` | Ban duration in seconds |
