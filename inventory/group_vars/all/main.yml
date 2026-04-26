@@ -14,7 +14,7 @@ ssh_password_authentication: "no"
 
 # Firewall
 allowed_ports:
-  - "{{ ssh_port }}/tcp"
+  - { port: "22", proto: "tcp" }
 
 # Fail2ban
 fail2ban_maxretry: 5
