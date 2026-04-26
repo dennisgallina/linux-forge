@@ -4,17 +4,17 @@
 vault_pass.txt
 *.log
 
-# Inventory locali (non committare host reali)
+# Local Inventory
 inventory/local/
 
 # Variabili sensibili
 group_vars/all/vault.yml
 host_vars/*/vault.yml
 
-# Dipendenze Galaxy installate localmente
+# Galaxy Dependencies
 roles/external/
 
-# Python (virtualenv se usi ansible in venv)
+# Python
 __pycache__/
 *.pyc
 .venv/
