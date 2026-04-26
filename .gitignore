@@ -8,7 +8,7 @@ vault_pass.txt
 inventory/local/
 
 # Variabili sensibili
-group_vars/all/vault.yml
+inventory/group_vars/all/vault.yml
 host_vars/*/vault.yml
 
 # Galaxy Dependencies
